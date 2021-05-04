@@ -11,7 +11,7 @@ Font automatically assembles on push in `master`.
 
 Common steps:
 - Put svgs in `./vectors`, do not remove or rename previously added icons
-- Glyph in a font will get name of target svg
+- Glyph in a font will be named as target svg
 - Change config in `fontcustom.yml` if needed ([read more](https://github.com/FontCustom/fontcustom/blob/master/lib/fontcustom/templates/fontcustom.yml))
 
 Steps for assemble on push:
