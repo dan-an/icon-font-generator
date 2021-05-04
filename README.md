@@ -21,6 +21,6 @@ Steps for assemble on push:
 - Add `node_modules/krypto-icon/public/fontcustom.css` to your project
 - Use new icons setting HTML element class like `.kr-{icon_name}`
 
-Steps for manual usage:
+Steps for manual assemble:
 - Call `docker run -v ${PWD}:/project --rm drichner/fontcustom compile`
 - Open `fontcustom-preview.html` to check assembled font
