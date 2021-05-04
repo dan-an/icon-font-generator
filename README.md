@@ -1,12 +1,12 @@
-#Krypto-icons
+# Krypto-icons
 Icon font assembler
 
-##Description
+## Description
 Assembles glyph font from svgs in `./vectors` for using in other projects.
 Core of project is [fontcustom](https://github.com/drichner/fontcustom)
 Icons 
 
-##Usage
+## Usage
 Font automatically assembles on push in `master`.
 
 Common steps:
