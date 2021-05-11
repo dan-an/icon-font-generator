@@ -1,0 +1,19 @@
+image: node:14-alpine
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - npm config set registry=https://nexus.kryptodev.ru/repository/npm-all/ --silent
+    - npm config set //nexus.kryptodev.ru/repository/npm-all/:_authToken=NpmToken.$NPM_TOKEN_DEV --silent
+    - npm install
+    - npm config set registry=https://nexus.kryptodev.ru/repository/npm/ --silent
+    - npm config set //nexus.kryptodev.ru/repository/npm/:_authToken=NpmToken.$NPM_TOKEN --silent
+    - npm config set git-tag-version=false
+    - docker run -v ${PWD}:/project --rm drichner/fontcustom compile
+    - npm version 0.1.$CI_PIPELINE_ID
+    - npm publish
+  only:
+    - master
